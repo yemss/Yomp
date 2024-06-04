@@ -1,97 +1,123 @@
- <!doctype html>
- <html lang="en-US">
-   <head>
-     
-     <meta charset="utf-8" />
-     
-  <link href="../static/css/style.css" rel="stylesheet" />
-  <script src="../static/scripts/main.js" defer></script>
+<!doctype html>
+<html lang="en-US">
+  <head>
+    
+    <meta charset="utf-8" />
+    
+ <link href="../static/css/style.css" rel="stylesheet" />
+ <script src="../static/scripts/main.js" defer></script>
 
 
-     <!--- Chakra font 
-     <link rel="preconnect" href="https://fonts.googleapis.com">
-     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-     <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch&display=swap" rel="stylesheet">
-     <link rel="preconnect" href="https://fonts.googleapis.com">
-     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-     
-       Ubuntu font 
-     <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch&family=Ubuntu:wght@300&display=swap" rel="stylesheet"> -->
-     
-     <meta name="viewport" content="width=device-width" />
-     
-     <title>Yomp Mainpage</title>
-     
-      <!--- Author --->
-     <meta name="author" content="Yomp" />
-     <meta
-       name="description"
-       content="Yomp is a minigame website aimed to raise funds for charity." />
+    <!-- Fonts stored online
+      Chakra font 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+      Ubuntu font 
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch&family=Ubuntu:wght@300&display=swap" rel="stylesheet"> -->
+    
+    <meta name="viewport" content="width=device-width" />
+    
+    <title>Yomp Mainpage</title>
+    
+     <!-- Author -->
+    <meta name="author" content="Yomp" />
+    <meta
+      name="description"
+      content="Yomp is a minigame website aimed to raise funds for charity." />
 
-     <!--- Facebook Open Graph --->
-     <meta
-       property="og:image"
-       content="http://yompers.yomp1.repl.co/lil.png" />
-     <meta
-       property="og:description"
-       content="Yomp is a webapp for playing a bunch of minigames." />
-     <meta property="og:title" content="Yomp" />
+    <!-- Facebook Open Graph -->
+    <meta
+      property="og:image"
+      content="http://yompers.yomp1.repl.co/lil.png" />
+    <meta
+      property="og:description"
+      content="Yomp is a webapp for playing a bunch of minigames." />
+    <meta property="og:title" content="Yomp" />
 
-      <!--- Twitter Cards --->
-     <meta name="twitter:title" content="Yomp" />
+     <!-- Twitter Cards -->
+    <meta name="twitter:title" content="Yomp" />
 
-     <link rel="icon" href="static/images/favicon.png" type="image/x-icon" />
-   </head>
+    <link rel="icon" href="template.ico" type="image/x-icon" />
+  </head>
+  <body>
+  <header>
+<!-- font awesome icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-   <body>
-    <header>
-      <h1> Welcome to Yomp </h1>
-    </header>
-<nav class="navigation-bar"> <aside> 
-  <a href="#">Our goal</a></br>
-  <a href="#">Sign in Yomp</a></br>
-  <a href="#">Minigame Shop</a></br>
-</aside> 
-</nav>
+<!-- The navigation menu -->
+<div class="nav-bar">
+    <a href="#yomp-shop">Yomp Shop</a>
+    <div class="sub-nav">
+        <button>Contact us <i class="fa fa-caret-down"></i></button>
+        <div class="sub-nav-content">
+            <a href="#mail">Mail</a>
+            <a href="#facebook">Facebook</a>
+            <a href="#discord">Discord</a>
+            <a href="#instagram">Instagram</a>
+        </div>
+    </div>
+    <a href="#sign-in">Sign in</a>
+    <a href="#about-us">About us</a>
+</div>
+
+<h1 class="title">Welcome to Yomp</h1>
+
+</header>
+
+<!-- The main content -->
 <main>
-      <img src="static/images/lil.png" alt="Wriely: an 8-bit" height="100" width="100"/>
+  <section>
+    <article>
+      <h2 class="header">The Honored Characters</h2>
+      <div class="character-display">
+        <img id="wriesly" src="template.png" alt="A blue and white 8-bit"/>
+        <img id="skizzy" src="template.png" alt="A girl with red hair with traditional clothes"/>
+        <img id="daemon" src="template.png" alt="A demon with black hair and red horns"/>
+      </div>
+    </article>
+  
+  <article>
+    <h2 class="header">Minigame Preview</h2>
+    <img id="console" src="template.png" alt="console"/>
+  </article>
+</section>
+</main>
 
-      <p class="right-section"> This is Yomp, a minigame station to rejoice and be free. </p>
-
-    <section>
-      <h2 class="subheading">Our goal</h2>
-      <p class="left-section">This webapp is an open-source project, purposed to raise funds for charity. 100% of the funds recieved will be given to charity. </p>
-    </section>f
-
-    <section>
-      <h2 class="subheading">Sign in Yomp</h2>
-     <p class="left-section">
-       <a class="left-section" href="/loginGI" title="Sign in page"> Sign in </a> to play.</p>
-      </section>
-
-    <section>
-     <h2 class="subheading">Minigame Shop</h2>
-     <ul class="left-section">
-       <li>Free
-       Limited minigames
-       </li>
-        <li>Pro
-        All minigames
-        </li>
-        <li>Ultra
-        All minigames, exclusive minigames and gifts in Yomp Pass
-        </li>
-     </ul>
-    </section>
-
-    </main>
-    <button>Change user</button>
 <footer>
-     <p class="date-modified">Last modified in <time datetime="2024-11-1">January 11 2024</time></p>
-     <address class="address"><p>Yama Samir
-      Telephone: 9647512451606
-      Email: Yomp@gmail.com
-    </p></address>
-  </footer>
-   </body>
- </html>
+  <div class="subscription">
+    <h2>Subscription</h2>
+    <ul>
+      <li>Yomp Shop</li>
+    </ul>
+</div>
+
+<div class="support">
+  <h2>Support</h2>
+  <ul>
+    <li>Mail</li>
+    <li>Discord</li>
+    <li>Facebook</li>
+    <li>Instagram</li>
+  </ul>
+</div>
+
+<div class="about-us">
+  <h2>About Us</h2>
+</div>
+
+<div class="privacy-policy">
+  <h2>Privacy Policy</h2>
+</div>
+
+<div class="terms-of-service">
+  <h2>Terms of Service</h2>
+</div>
+
+<div class="copyright">Copyright</div>
+</footer>
+  </body>
+</html>

@@ -1,80 +1,115 @@
 @font-face {
-  font-family: 'Chakra Petch';
-  src: local('ChakraPetch-Light'),
-  url('/static/fonts/chakra-petch/ChakraPetch-Light.ttf') format('truetype');
+  font-family: "Chakra Petch";
+  src: local("ChakraPetch-Light"),
+  url("/static/fonts/chakra-petch/ChakraPetch-Light.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: 'Ubuntu';
-  src: local('Ubuntu'),
-  url('/static/fonts/ubuntu/Ubuntu-Light.ttf') format('truetype');
+  font-family: "Ubuntu";
+  src: local("Ubuntu"),
+  url("/static/fonts/ubuntu/Ubuntu-Light.ttf") format("truetype");
 }
 
+/* The whole page */
 html {
-  font-family: 'Chakra Petch', sans-serif;
-  font-size: 10px;
-  margin-top: 50px;
-  background-color: #dfe3eb;
+  background-color: #212227;
+  font-family: "Ubuntu", "sans-serif";
+  color: #e8e8e8;
+  font-size: 20px;
 }
 
 body {
-  width: 600px;
-  margin: 0 auto;
-  padding: 0 10px 10px 10px;
+  padding-top: 3vh;
 }
 
-h1 {
+.title {
+  font-family: "Chakra Petch", "sans-serif";
+  font-size: 60px;
   text-align: center;
-  font-weight: bolder;
-  font-size: 75px;
+}
+
+.header {
+  font-family: "Chakra Petch", "sans-serif";
+  font-size: 40px;
+}
+
+/* The navigation menu */
+/* The navigation menu */
+.nav-bar {
+  background-color: #37383d;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+/* Primary navigation links */
+.nav-bar a {
+  float: left;
+  font-size: 16px;
+  color: #e8e8e8;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Sub-navigation menu */
+.sub-nav {
+  float: left;
+  overflow: hidden;
+}
+
+/* Sub-navigation button style */
+.sub-nav button {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: #e8e8e8;
+  padding: 14px 16px;
+  background-color: inherit;
   margin: 0;
-  padding: 20px 0;
-  color: #021222;
 }
 
-.subheading {
-    text-align: left;
-    font-weight: bolder;
-    font-size: 30px;
-    margin: 0;
-    padding: 20px 0;
-    color: #021222;
+/* Hover effect for navigation links and sub-navigation button */
+.nav-bar a:hover,
+.sub-nav:hover button {
+  background-color: #7498e8;
 }
 
-.right-section {
-  padding: 100px;
-  margin: 0px;
-  font-family: 'Ubuntu';
-  text-align: left;
-  font-size: 16px;
-  line-height: 2;
-  letter-spacing: 1px;
+/* Style the sub-navigation content (positioned absolute) */
+.sub-nav-content {
+  display: none;
+  position: absolute;
+  left: 0;
+  background-color: #7498e8;
+  width: 100%;
+  z-index: 1;
 }
-.left-section {
-  padding: 0px;
-  font-family: 'Ubuntu';
-  text-align: left;
-  font-size: 16px;
-  line-height: 2;
-  letter-spacing: 1px;
+
+/* Style the sub-navigation links */
+.sub-nav-content a {
+  float: left;
+  color: #e8e8e8;
+  text-decoration: none;
 }
-.date-modified {
-  padding: 0px;
-  font-family: 'Ubuntu';
-  text-align: left;
-  font-size: 14px;
-  line-height: 2;
-  letter-spacing: 1px;
+
+/* Add a grey background color on hover for sub-navigation links */
+.sub-nav-content a:hover {
+  background-color: #83a4ea;
+  color: #212227;
 }
-.address {
-  padding: 0px;
-  font-family: 'Ubuntu';
-  text-align: left;
-  font-size: 14px;
-  line-height: 2;
-  letter-spacing: 1px;
-}
-img {
+
+/* Display sub-navigation content when hovering over the sub-navigation container */
+.sub-nav:hover .sub-nav-content {
   display: block;
-  margin: 0 auto;
 }
+
+.subscription > ul > li, .support > ul > li {
+  list-style-type: none;
+  text-align: center;
+}
+
+
+
