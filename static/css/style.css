@@ -106,10 +106,24 @@ body {
   display: block;
 }
 
-.subscription > ul > li, .support > ul > li {
-  list-style-type: none;
-  text-align: center;
+.character-display {
+  background-color: #648de5;
+  width: 500px;
+  height: 250px;
+  display: flex;
+  justify-content: space-between; 
+  align-items: flex-end; 
 }
 
+.character-display img {
+  width: calc(33.3% - 2px*2);
+  height: 30%;
+  margin: 2px;
+}
+
+/* Removing the marker from the lists in the footer */
+.subscription > ul > li, .support > ul > li {
+  list-style-type: none;
+}
 
 
