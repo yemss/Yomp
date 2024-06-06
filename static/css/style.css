@@ -7,15 +7,17 @@
 @font-face {
   font-family: "Ubuntu";
   src: local("Ubuntu"),
-  url("/static/fonts/ubuntu/Ubuntu-Light.ttf") format("truetype");
+  url("/static/fonts/ubuntu/Ubuntu-Regular.ttf") format("truetype");
 }
 
 /* The whole page */
 html {
   background-color: #212227;
   font-family: "Ubuntu", "sans-serif";
-  color: #e8e8e8;
+  color: #d6e0f8;
   font-size: 20px;
+  padding-left: 30px;
+  padding-right: 30px;
 }
 
 body {
@@ -49,7 +51,7 @@ body {
 .nav-bar a {
   float: left;
   font-size: 16px;
-  color: #e8e8e8;
+  color: #c1d1f5;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -66,7 +68,7 @@ body {
   font-size: 16px;
   border: none;
   outline: none;
-  color: #e8e8e8;
+  color: #c1d1f5;
   padding: 14px 16px;
   background-color: inherit;
   margin: 0;
@@ -91,7 +93,7 @@ body {
 /* Style the sub-navigation links */
 .sub-nav-content a {
   float: left;
-  color: #e8e8e8;
+  color: #c1d1f5;
   text-decoration: none;
 }
 
@@ -109,21 +111,55 @@ body {
 .character-display {
   background-color: #648de5;
   width: 500px;
-  height: 250px;
+  height: 350px;
+  position: relative;
   display: flex;
-  justify-content: space-between; 
-  align-items: flex-end; 
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.character-name {
+  position: absolute;
+  top: 0;
+  font-family: "Chakra Petch", "sans-serif";
+  font-size: 40px;
+  margin-top: 10px;
+  margin-left: 10px;
+  color: #e8e8e8;
+  text-align: left;
 }
 
 .character-display img {
-  width: calc(33.3% - 2px*2);
+  align-items: center;
+  width: calc(33.3% - 4px - 4px);
   height: 30%;
-  margin: 2px;
+  margin-left: 10px;
+  margin-right: 10px;
+  overflow: hidden;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.character-description {
+  position: absolute;
+  top: 50px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+  text-align: left;
+  font-size: 17px;
+  color: black;
+}
+
+#console {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
 }
 
 /* Removing the marker from the lists in the footer */
 .subscription > ul > li, .support > ul > li {
   list-style-type: none;
 }
-
-
