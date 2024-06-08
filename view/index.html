@@ -51,6 +51,7 @@
 <!-- The navigation menu -->
 <div class="nav-bar">
     <a href="#yomp-shop">Yomp Shop</a>
+
     <div class="sub-nav">
         <button>Contact us <i class="fa fa-caret-down"></i></button>
         <div class="sub-nav-content">
@@ -63,9 +64,11 @@
     <a href="#sign-in">Sign in</a>
     <a href="#about-us">About us</a>
 </div>
-
-<h1 class="title">Welcome to Yomp</h1>
-
+<div class="welcome-page-container">
+<h1 id="title">Yomp</h1>
+<p id="welcome-text"> Welcome to Yomp, embrace the minigame world</p>
+<img id="wriesly-img" src="../static/images/template.png" alt="Wriesly, little 8-bit console, illustrated in water">
+</div>
 </header>
 
 <!-- The main content -->
@@ -82,23 +85,24 @@
       </div>
     </article>
   
-  <article>
+  <article class="console">
     <h2 class="header">Minigame Preview</h2>
     <img id="console" src="../static/images/template.png" alt="console"/>
   </article>
 </section>
 </main>
 
-<footer>
+<footer role="navigation">
+  <div class="footer-container">
   <div class="subscription">
-    <h2>Subscription</h2>
+    <h3>Subscription</h3>
     <ul>
       <li>Yomp Shop</li>
     </ul>
 </div>
 
 <div class="support">
-  <h2>Support</h2>
+  <h3>Support</h3>
   <ul>
     <li>Mail</li>
     <li>Discord</li>
@@ -108,18 +112,29 @@
 </div>
 
 <div class="about-us">
-  <h2>About Us</h2>
+  <h3>About Us</h3>
+  <ul>
+    <li>Our goal</li>
+  </ul>
 </div>
 
 <div class="privacy-policy">
-  <h2>Privacy Policy</h2>
+  <h3>Privacy Policy</h3>
+  <ul>
+    <li>Privacy policy</li>
+  </ul>
 </div>
 
 <div class="terms-of-service">
-  <h2>Terms of Service</h2>
+  <h3>Terms of Service</h3>
+  <ul>
+    <li>Terms of service</li>
+  </ul>
 </div>
-
-<div class="copyright">Copyright</div>
+</div>
+<div class="copyright">
+  <p>&copy; 2024 Yomp</p>
+</div>
 </footer>
   </body>
 </html>

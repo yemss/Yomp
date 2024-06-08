@@ -10,41 +10,33 @@
   url("/static/fonts/ubuntu/Ubuntu-Regular.ttf") format("truetype");
 }
 
+* {
+  margin: 0;
+  padding: 0;
+}
+
 /* The whole page */
-html {
+body {
   background-color: #212227;
   font-family: "Ubuntu", "sans-serif";
   color: #d6e0f8;
   font-size: 20px;
-  padding-left: 30px;
-  padding-right: 30px;
+  min-height: 100%;
+  max-width: 100%;
+  position: relative;
+  margin: 0 50px 0 50px;
 }
 
-body {
-  padding-top: 3vh;
-}
-
-.title {
-  font-family: "Chakra Petch", "sans-serif";
-  font-size: 60px;
-  text-align: center;
-}
-
-.header {
-  font-family: "Chakra Petch", "sans-serif";
-  font-size: 40px;
-}
-
-/* The navigation menu */
 /* The navigation menu */
 .nav-bar {
   background-color: #37383d;
-  overflow: hidden;
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  z-index: 1000;
+  margin-left: -50px;
+  margin-right: -50px;
+  padding-left: 10px;
 }
 
 /* Primary navigation links */
@@ -108,10 +100,48 @@ body {
   display: block;
 }
 
+.welcome-page-container {
+  position: relative;
+  text-align: right;
+  margin-left: -50px;
+  margin-right: -50px;
+  margin-bottom: 100px;
+  top: 46px;
+}
+
+#wriesly-img {
+  width: 100%;
+}
+
+#title {
+  font-family: "Chakra Petch", "sans-serif";
+  text-align: right;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  /*transform: translate(-50%, -50%);*/
+  font-size: 24px;
+}
+
+#welcome-text {
+  font-size: 60px;
+  position: absolute;
+  right: 4%;
+  bottom: 10%;
+  width: 50%;
+}
+
+.header {
+  font-family: "Chakra Petch", "sans-serif";
+  font-size: 40px;
+  display: block;
+}
+
 .character-display {
   background-color: #648de5;
   width: 500px;
   height: 350px;
+  margin-bottom: 100px;
   position: relative;
   display: flex;
   flex-direction: row;
@@ -131,12 +161,11 @@ body {
 }
 
 .character-display img {
-  align-items: center;
+  overflow: hidden;
   width: calc(33.3% - 4px - 4px);
   height: 30%;
   margin-left: 10px;
   margin-right: 10px;
-  overflow: hidden;
   margin-bottom: 10px;
   border-radius: 5px;
 }
@@ -156,10 +185,55 @@ body {
   display: block;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 100px;
   width: 50%;
 }
 
+.console {
+  margin-bottom: 20px;
+}
+
 /* Removing the marker from the lists in the footer */
-.subscription > ul > li, .support > ul > li {
+footer > div > div > ul > li {
   list-style-type: none;
+}
+
+footer {
+  background-color: #37383d;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin-left: -50px;
+  margin-right: -50px;
+  font-size: 15px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+
+footer > div {
+  flex: 1;
+  padding: 0 20px;
+}
+
+footer > div > div > h3 {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.copyright {
+  border-top: 2px solid #646468;
+  text-align: left;
+  font-size: 14px;
+}
+
+.copyright > p {
+  margin-top: 15px;
+  margin-bottom: 0;
 }
