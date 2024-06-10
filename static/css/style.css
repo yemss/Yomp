@@ -10,6 +10,7 @@
   url("/static/fonts/ubuntu/Ubuntu-Regular.ttf") format("truetype");
 }
 
+/* Universally removing default browser margins and paddings*/
 * {
   margin: 0;
   padding: 0;
@@ -17,12 +18,12 @@
 
 /* The whole page */
 body {
+  overscroll-behavior: none;
   background-color: #212227;
   font-family: "Ubuntu", "sans-serif";
   color: #d6e0f8;
   font-size: 20px;
   min-height: 100%;
-  max-width: 100%;
   position: relative;
   margin: 0 50px 0 50px;
 }
@@ -47,6 +48,15 @@ body {
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
+}
+
+/* The title for the website */
+#title {
+  font-family: "Chakra Petch", "sans-serif";
+  text-align: right;
+  margin-top: calc(32px - 24px);
+  margin-right: 10px;
+  font-size: 24px;
 }
 
 /* Sub-navigation menu */
@@ -100,6 +110,7 @@ body {
   display: block;
 }
 
+/* A container inside the header section */
 .welcome-page-container {
   position: relative;
   text-align: right;
@@ -109,20 +120,12 @@ body {
   top: 46px;
 }
 
+/* The welcome-page-container image */
 #wriesly-img {
   width: 100%;
 }
 
-#title {
-  font-family: "Chakra Petch", "sans-serif";
-  text-align: right;
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  /*transform: translate(-50%, -50%);*/
-  font-size: 24px;
-}
-
+/* Contains the introductory text about the page */
 #welcome-text {
   font-size: 60px;
   position: absolute;
@@ -131,27 +134,34 @@ body {
   width: 50%;
 }
 
+/* The header class which contains the headers of all article elements*/
 .header {
   font-family: "Chakra Petch", "sans-serif";
   font-size: 40px;
+  margin-bottom: 30px;
   display: block;
 }
 
-.character-display {
-  background-color: #648de5;
-  width: 500px;
-  height: 350px;
-  margin-bottom: 100px;
-  position: relative;
-  display: flex;
-  flex-direction: row;
-  align-items: flex-end;
-  justify-content: space-between;
+/* The part of the section element */
+article {
+  margin-top: 50px;
 }
 
+/* an article container for the preview of characters */
+.character-preivew {
+  height: calc(100% - 50px);
+  width: 100%;
+}
+
+/* A container within character-preview to align child elements (character-display and character-img) */
+.row-display-container {
+  display: flex;
+  width: 100%;
+  height: calc(100% - 70px);
+}
+
+/* The name of the character */
 .character-name {
-  position: absolute;
-  top: 0;
   font-family: "Chakra Petch", "sans-serif";
   font-size: 40px;
   margin-top: 10px;
@@ -160,27 +170,58 @@ body {
   text-align: left;
 }
 
+/* The container of character's name, button and description (character-name, character-description, and img) */
+.character-display {
+  background-color: #648de5;
+  flex: 1;
+  margin-right: 20px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Contains the interactive img elements */
+.image-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* The interactive img elements corresponding to each character */
 .character-display img {
   overflow: hidden;
   width: calc(33.3% - 4px - 4px);
-  height: 30%;
+  height: calc(100% - 10px);
   margin-left: 10px;
   margin-right: 10px;
-  margin-bottom: 10px;
   border-radius: 5px;
 }
 
+/* A description within the p element corresponding to each character */
 .character-description {
-  position: absolute;
-  top: 50px;
+  overflow: auto;
+  margin-top: 30px;
+  margin-bottom: 40px;
   padding-left: 10px;
   padding-right: 10px;
-  padding-top: 10px;
   text-align: left;
   font-size: 17px;
   color: black;
 }
 
+/* The image on the side of the character-display container */
+.character-img {
+  flex: 1;
+  margin-left: 20px;
+  width: calc(50% - 20px);
+}
+
+/* A container for the second article element*/
+.console {
+  margin-bottom: 20px;
+}
+
+/* displays a preview of minigames */
 #console {
   display: block;
   margin-left: auto;
@@ -189,51 +230,55 @@ body {
   width: 50%;
 }
 
-.console {
-  margin-bottom: 20px;
-}
-
 /* Removing the marker from the lists in the footer */
 footer > div > div > ul > li {
   list-style-type: none;
 }
 
+/* The footer section of the page with its child elements aligned in a column */
 footer {
   background-color: #37383d;
+  color: #c1d1f5;
   padding-top: 20px;
-  padding-bottom: 20px;
-  padding-left: 5px;
-  padding-right: 5px;
+  padding-left: 20px;
   margin-left: -50px;
   margin-right: -50px;
   font-size: 15px;
+  display: flex;
+  flex-direction: column;
 }
 
+/* A container for all the div elements within the footer aligned in a row */
 .footer-container {
   display: flex;
-  justify-content: space-between;
-  max-width: 1200px;
-  margin: 0 auto;
-  margin-bottom: 10px;
-}
-
-footer > div {
   flex: 1;
-  padding: 0 20px;
+  flex-direction: row;
+  text-align: left;
+  padding-bottom: 20px;
+  width: 100%;
 }
 
+/* Responsive spacing between subsections*/
+.footer-container > div {
+  padding-right: calc((100% / 5) - 15%);
+}
+/* commment: Making footer and the article container (character-preview) more responsive
+
+/* The header for each subsection */
 footer > div > div > h3 {
   font-weight: bold;
   margin-bottom: 10px;
 }
 
+/* Copyright seperated by a border-top property from the footer */
 .copyright {
   border-top: 2px solid #646468;
   text-align: left;
   font-size: 14px;
 }
 
+/* The text inside the copyright class */
 .copyright > p {
-  margin-top: 15px;
-  margin-bottom: 0;
+  margin-top: calc(15px + 2px);
+  margin-bottom: 15px;
 }
