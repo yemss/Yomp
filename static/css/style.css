@@ -1,13 +1,25 @@
 @font-face {
   font-family: "Chakra Petch";
-  src: local("ChakraPetch-Light"),
-  url("/static/fonts/chakra-petch/ChakraPetch-Light.ttf") format("truetype");
+  src: local("ChakraPetch-SemiBold"),
+  url("/static/fonts/chakra-petch/ChakraPetch-SemiBold.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "Ubuntu";
   src: local("Ubuntu"),
   url("/static/fonts/ubuntu/Ubuntu-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Minecraft";
+  src: local("Minecraft"),
+  url("/static/fonts/minecraft/Minecraft.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Pixelify Sans";
+  src: local("PixelifySans-Regular"),
+  url("/static/fonts/Pixelify_Sans/static/PixelifySans-Regular.ttf") format("truetype");
 }
 
 /* Universally removing default browser margins and paddings*/
@@ -125,11 +137,16 @@ body {
   width: 100%;
 }
 
-/* Contains the introductory text about the page */
-#welcome-text {
-  font-size: 60px;
+/* The rectangle around welcome-text */
+#welcome-text-container {
+  font-family: "Chakra Petch";
+  background-color: #53506ca1;
+  border: 10px solid #53506c;
+  text-align: center;
+  padding: 20px;
   position: absolute;
-  right: 4%;
+  font-size: 70px;
+  right: 5%;
   bottom: 10%;
   width: 50%;
 }
@@ -213,6 +230,7 @@ article {
 .character-img {
   flex: 1;
   margin-left: 20px;
+  height: 100%;
   width: calc(50% - 20px);
 }
 
@@ -262,7 +280,6 @@ footer {
 .footer-container > div {
   padding-right: calc((100% / 5) - 15%);
 }
-/* commment: Making footer and the article container (character-preview) more responsive
 
 /* The header for each subsection */
 footer > div > div > h3 {

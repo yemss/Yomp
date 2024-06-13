@@ -26,17 +26,17 @@ function createImageForCharacter(str) {
     img.src = str;
     img.alt = "";
     div_parent2.appendChild(img);
-    applyStyles(img, {"min-height": "100%", width: "100%"});
+    applyStyles(img, {"min-height": "100%", width: "100%", border: "6px solid #d6e0f8"});
 }
 
-createImageForCharacter("static/images/template.png");
+createImageForCharacter("static/images/Wriesly-upscaled.png");
 let description = "Wriesly is an 8-bit console who resides in the Yomp world, the world of minigames, with a duty to perserve it from the eventual ruin.";
 createDescriptionForCharacter(description);
 h3_element.textContent = "Wriesly";
 applyStyles(wriesly_btn, {border: "3px solid #93afed"});
 
 wriesly_btn.addEventListener('click', () => {
-    createImageForCharacter("static/images/template.png");
+    createImageForCharacter("static/images/Wriesly-upscaled.png");
     let description = "Wriesly is an 8-bit console who resides in the Yomp world, the world of minigames, with a duty to perserve it from the eventual ruin.";
     createDescriptionForCharacter(description);
     h3_element.textContent = "Wriesly";
