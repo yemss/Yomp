@@ -122,14 +122,10 @@ body {
   display: block;
 }
 
-/* A container inside the header section */
+/* The header section */
 .welcome-page-container {
+  padding-top: 39px; 
   position: relative;
-  text-align: right;
-  margin-left: -50px;
-  margin-right: -50px;
-  margin-bottom: 100px;
-  top: 46px;
 }
 
 /* The welcome-page-container image */
@@ -137,18 +133,26 @@ body {
   width: 100%;
 }
 
-/* The rectangle around welcome-text */
+/* A container inside the header section */
+
 #welcome-text-container {
-  font-family: "Chakra Petch";
-  background-color: #53506ca1;
-  border: 10px solid #53506c;
-  text-align: center;
-  padding: 20px;
   position: absolute;
-  font-size: 70px;
   right: 5%;
-  bottom: 10%;
-  width: 50%;
+  text-align: center;
+  transform: translate(0, 110%);
+}
+
+#welcome-text {
+  font-family: "Chakra Petch";
+  transform: translate(-50%, -50%);
+  font-size: 70px;
+  color: rgba(0, 0, 0, 0.267);
+}
+
+/* The rectangle around welcome-text*/
+#welcome-page-container {
+  position: relative;
+  transform: translate(-5%, 240%);
 }
 
 /* The header class which contains the headers of all article elements*/
@@ -211,7 +215,6 @@ article {
   height: calc(100% - 10px);
   margin-left: 10px;
   margin-right: 10px;
-  border-radius: 5px;
 }
 
 /* A description within the p element corresponding to each character */
