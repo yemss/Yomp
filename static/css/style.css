@@ -122,37 +122,50 @@ body {
   display: block;
 }
 
-/* The header section */
 .welcome-page-container {
-  padding-top: 39px; 
+  margin: 0 -50px 0 -50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-bottom: 39px;
   position: relative;
 }
 
-/* The welcome-page-container image */
 #wriesly-img {
   width: 100%;
 }
 
 /* A container inside the header section */
-
 #welcome-text-container {
   position: absolute;
-  right: 5%;
-  text-align: center;
-  transform: translate(0, 110%);
+  float: right;
+  width: 52vw;
+  font-size: 4.5vw;
+  right: 0;
+  padding-bottom: 40px;
+  padding-right: 40px;
+}
+
+#welcome-text-container div {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  float: right;
+}
+
+#welcome-text-container img {
+  float: right;
+  width: 100%;
+  height: 100%;
 }
 
 #welcome-text {
   font-family: "Chakra Petch";
-  transform: translate(-50%, -50%);
-  font-size: 70px;
-  color: rgba(0, 0, 0, 0.267);
-}
-
-/* The rectangle around welcome-text*/
-#welcome-page-container {
-  position: relative;
-  transform: translate(-5%, 240%);
+  position: absolute;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 5%;
+  margin-bottom: 5%;
 }
 
 /* The header class which contains the headers of all article elements*/
@@ -174,11 +187,10 @@ article {
   width: 100%;
 }
 
-/* A container within character-preview to align child elements (character-display and character-img) */
+/* A container within character-preview to align child elements */
 .row-display-container {
   display: flex;
   width: 100%;
-  height: calc(100% - 70px);
 }
 
 /* The name of the character */
@@ -226,7 +238,7 @@ article {
   padding-right: 10px;
   text-align: left;
   font-size: 17px;
-  color: black;
+  color: #212227;
 }
 
 /* The image on the side of the character-display container */
@@ -239,16 +251,43 @@ article {
 
 /* A container for the second article element*/
 .console {
-  margin-bottom: 20px;
+  margin-bottom: 100px;
+  overflow: hidden;
 }
 
-/* displays a preview of minigames */
 #console {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 100px;
-  width: 50%;
+  width: 70%;
+}
+
+#note-header {
+  display: flex;
+  font-size: 20px;
+  padding: 10px 10px 10px 10px;
+  padding-left: 5px;
+}
+
+#exclamation-icon {
+  width: 5%;
+  height: 5%;
+  padding-right: 5px;
+  align-self: center;
+}
+
+#border {
+  border-top: 2px solid #677297;
+}
+
+#coming-soon-container {
+  flex: auto;
+  float: left;
+  background-color: rgba(48, 56, 82, 0.534);
+  border: 10px solid #2c334b;
+  margin-right: 20px;
+  height: 30%;
+}
+
+#coming-soon-container p {
+  padding: 20px 20px 20px 20px;
 }
 
 /* Removing the marker from the lists in the footer */

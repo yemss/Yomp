@@ -33,16 +33,18 @@ createImageForCharacter("static/images/wriesly.png");
 let description = "Wriesly is an 8-bit console who resides in the Yomp world, the world of minigames, with a duty to perserve it from the eventual ruin.";
 createDescriptionForCharacter(description);
 h3_element.textContent = "Wriesly";
-applyStyles(wriesly_btn, {border: "3px solid black"});
+applyStyles(wriesly_btn, {border: "3px solid black", filter: "brightness(100%)"});
+applyStyles(skizzy_btn, {filter: "brightness(40%)"});
+applyStyles(daemon_btn, {filter: "brightness(40%)"});
 
 wriesly_btn.addEventListener('click', () => {
     createImageForCharacter("static/images/wriesly.png");
     let description = "Wriesly is an 8-bit console who resides in the Yomp world, the world of minigames, with a duty to perserve it from the eventual ruin.";
     createDescriptionForCharacter(description);
     h3_element.textContent = "Wriesly";
-    applyStyles(wriesly_btn, {border: "3px solid black"}); //#e36666
-    applyStyles(skizzy_btn, {"border-width": 0});
-    applyStyles(daemon_btn, {"border-width": 0});
+    applyStyles(wriesly_btn, {border: "3px solid black", filter: "brightness(100%)"}); //#e36666
+    applyStyles(skizzy_btn, {"border-width": 0, filter: "brightness(40%)"});
+    applyStyles(daemon_btn, {"border-width": 0, filter: "brightness(40%)"});
     applyStyles()
     });
 
@@ -51,9 +53,9 @@ skizzy_btn.addEventListener('click', () => {
     let description = "Skizzy is a little girl who loves sour candy and bunnies, venturing the vast horizons of Yomp.";
     createDescriptionForCharacter(description);
     h3_element.textContent = "Skizzy";
-    applyStyles(skizzy_btn, {border: "3px solid black"});
-    applyStyles(wriesly_btn, {"border-width": 0});
-    applyStyles(daemon_btn, {"border-width": 0});
+    applyStyles(skizzy_btn, {border: "3px solid black", filter: "brightness(100%)"});
+    applyStyles(wriesly_btn, {"border-width": 0, filter: "brightness(40%)"});
+    applyStyles(daemon_btn, {"border-width": 0, filter: "brightness(40%)"});
 });
 
 daemon_btn.addEventListener('click', () => {
@@ -61,7 +63,7 @@ daemon_btn.addEventListener('click', () => {
     let description = "Daemon, the last ancestor of the demon kin, mistakenly arrived within the Yomp realm. The first impression on him seems fearesome but in truth is a considerate child.";
     createDescriptionForCharacter(description);
     h3_element.textContent = "Daemon";
-    applyStyles(daemon_btn, {border: "3px solid black"});
-    applyStyles(wriesly_btn, {"border-width": 0});
-    applyStyles(skizzy_btn, {"border-width": 0});
+    applyStyles(daemon_btn, {border: "3px solid black", filter: "brightness(100%)"});
+    applyStyles(wriesly_btn, {"border-width": 0, filter: "brightness(40%)"});
+    applyStyles(skizzy_btn, {"border-width": 0, filter: "brightness(40%)"});
 });
