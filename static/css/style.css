@@ -10,18 +10,6 @@
   url("/static/fonts/ubuntu/Ubuntu-Regular.ttf") format("truetype");
 }
 
-@font-face {
-  font-family: "Minecraft";
-  src: local("Minecraft"),
-  url("/static/fonts/minecraft/Minecraft.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "Pixelify Sans";
-  src: local("PixelifySans-Regular"),
-  url("/static/fonts/Pixelify_Sans/static/PixelifySans-Regular.ttf") format("truetype");
-}
-
 /* Universally removing default browser margins and paddings*/
 * {
   margin: 0;
@@ -50,6 +38,7 @@ body {
   margin-left: -50px;
   margin-right: -50px;
   padding-left: 10px;
+  z-index: 2;
 }
 
 /* Primary navigation links */
@@ -88,20 +77,31 @@ body {
   margin: 0;
 }
 
-/* Hover effect for navigation links and sub-navigation button */
-.nav-bar a:hover,
-.sub-nav:hover button {
-  background-color: #7498e8;
-}
-
 /* Style the sub-navigation content (positioned absolute) */
 .sub-nav-content {
-  display: none;
+  visibility: hidden;
+  opacity: 0;
   position: absolute;
   left: 0;
   background-color: #7498e8;
   width: 100%;
-  z-index: 1;
+}
+
+/* Smooth opacity transition of the sub-nav-content */
+.sub-nav-content {
+  transition: opacity 100ms ease-in-out
+}
+
+/* Display sub-navigation content when hovering over the sub-navigation container */
+.sub-nav:hover .sub-nav-content {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Hover effect for navigation links and sub-navigation button */
+.nav-bar a:hover,
+.sub-nav:hover button {
+  background-color: #7498e8;
 }
 
 /* Style the sub-navigation links */
@@ -117,18 +117,14 @@ body {
   color: #212227;
 }
 
-/* Display sub-navigation content when hovering over the sub-navigation container */
-.sub-nav:hover .sub-nav-content {
-  display: block;
-}
-
 .welcome-page-container {
   margin: 0 -50px 0 -50px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding-bottom: 39px;
+  padding-top: 46px;
   position: relative;
+  z-index: 1;
 }
 
 #wriesly-img {
@@ -229,6 +225,21 @@ article {
   margin-right: 10px;
 }
 
+.bright-img {
+  border: 3px solid black;
+  filter: brightness(100%);
+}
+
+.dark-img {
+  border-width: 0;
+  filter: brightness(40%);
+}
+
+.dark-img:hover {
+  border: 3px solid black;
+  filter: brightness(70%);
+}
+
 /* A description within the p element corresponding to each character */
 .character-description {
   overflow: auto;
@@ -256,7 +267,7 @@ article {
 }
 
 #console {
-  width: 70%;
+  max-width: 70%;
 }
 
 #note-header {
@@ -267,8 +278,7 @@ article {
 }
 
 #exclamation-icon {
-  width: 5%;
-  height: 5%;
+  width: 2.5vh;
   padding-right: 5px;
   align-self: center;
 }
@@ -278,27 +288,33 @@ article {
 }
 
 #coming-soon-container {
-  flex: auto;
+  flex: 1;
   float: left;
   background-color: rgba(48, 56, 82, 0.534);
   border: 10px solid #2c334b;
   margin-right: 20px;
   height: 30%;
+  max-width: 30%;
 }
 
 #coming-soon-container p {
   padding: 20px 20px 20px 20px;
 }
 
+@media (max-width: 806px) {
+  #console {
+    max-width: 70%;
+  }
+}
+
 /* Removing the marker from the lists in the footer */
-footer > div > div > ul > li {
+footer  div  div  ul  li {
   list-style-type: none;
 }
 
 /* The footer section of the page with its child elements aligned in a column */
 footer {
   background-color: #37383d;
-  color: #c1d1f5;
   padding-top: 20px;
   padding-left: 20px;
   margin-left: -50px;
@@ -323,6 +339,15 @@ footer {
   padding-right: calc((100% / 5) - 15%);
 }
 
+.support a:link, .support a:visited {
+  text-decoration: none;
+  color: #c1d1f5;
+}
+
+.support a:hover {
+  text-decoration: underline;
+}
+
 /* The header for each subsection */
 footer > div > div > h3 {
   font-weight: bold;
@@ -339,5 +364,5 @@ footer > div > div > h3 {
 /* The text inside the copyright class */
 .copyright > p {
   margin-top: calc(15px + 2px);
-  margin-bottom: 15px;
+  margin-bottom: 15px;                                                                                                                       
 }

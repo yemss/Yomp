@@ -8,6 +8,13 @@ app.use('/static', express.static('static'))
 app.get('/', (req, res) => {
 
   res.sendFile(path.join(__dirname, '/view/index.html'))
+
+})
+
+app.get('/signin', (req, res) => {
+
+  res.sendFile(path.join(__dirname, '/view/sign-in.html'))
+
 })
 
 app.listen(port, () => {

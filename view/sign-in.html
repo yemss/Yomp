@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    
+    <meta charset="utf-8" />
+    
+ <link href="../static/css/sign-in-style.css" rel="stylesheet" />
+ <script src="../static/scripts/main.js" defer></script>
+
+
+    <!-- Fonts stored online
+      Chakra font 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+      Ubuntu font 
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch&family=Ubuntu:wght@300&display=swap" rel="stylesheet"> -->
+    
+    <meta name="viewport" content="width=device-width" />
+    
+    <title>Sign in</title>
+  </head>
+  <body>
+
+<!-- Sign in/login form -->
+<form class="sign-in" action="/my-handling-form-page" method="post">
+    <ul>
+    <li>
+      <label for="name">Username:</label>
+    </li>
+    <li>
+      <input type="text" id="name" name="user_name"/>
+    </li>
+    <li>
+      <label for="mail">Email:</label>
+    </li>
+    <li>
+      <input type="email" id="email" name="user_email"/>
+    </li>
+    <li>
+      <label for="password">Password:</label>
+    </li>
+    <li>
+      <input type="password" id="password" name="user_password" minlength="8" maxlength="50" required/>
+    </li>
+    <li>
+      <label for="password">Enter password again:</label>
+    </li>
+    <li>
+      <input type="password" id="password" name="user_password_again" minlength="8" maxlength="50" required/>
+    </li>
+    <li class="last-li">
+      <p>Or
+<span>Login</span>
+    </p>
+      <img id="next-btn" src="../static/images/next-btn.png" alt=""/>
+    </li>
+  </ul>
+  <img id="sign-in-img" src="../static/images/sign-in.png" alt=""/>
+  </form>  
+</body>
