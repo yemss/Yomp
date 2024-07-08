@@ -11,9 +11,9 @@ app.get('/', (req, res) => {
 
 })
 
-app.get('/signin', (req, res) => {
+app.get('/auth', (req, res) => {
 
-  res.sendFile(path.join(__dirname, '/view/sign-in.html'))
+  res.sendFile(path.join(__dirname, '/view/authentication.html'))
 
 })
 

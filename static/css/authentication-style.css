@@ -27,31 +27,25 @@
     overscroll-behavior: none;
     background-color: #212227;
     font-family: "Pixel font", "sans-serif";
-    color: #d6e0f8;
-    width: 100%;
+    color: #dbdbdb;
     height: 100%;
+    letter-spacing: -5px;
   }
 
-  .sign-in {
+  .auth {
     display: inline-block;
     position: relative;
   }
 
 /* Sign in form */
-  #sign-in-img {
+  #auth-img-container {
     width: 50%;
     margin-top: 2.89vh;
     margin-left: 25vw;
-    margin-right: 25vw;
   } 
-  
-  ul::-webkit-scrollbar {
-    position: absolute;
-    left: 0;
-  }
 
-  .sign-in ul {
-    font-size: 30px;
+  .auth ul {
+    font-size: 40px;
     overflow: auto;
     position: absolute;
     top: 15.2%;
@@ -61,54 +55,68 @@
     width: calc(716/75 * 49px);
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
-    padding-left: 10px;
+    padding-left: 35px;
+  }
+
+  div {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .field {
+    padding-bottom: 10px;
+    padding-top: 10px;
   }
 
    input {
-    font-family: "Ubuntu", "sans-serif";
-    color: #d6e0f8;
     border-width: 0;
     outline: 0;
+    font-family: "Ubuntu", "sans-serif";
+    font-size: 25px;
+    width: 380px;
+    height: 60px;
+    padding-right: 20px;
+    padding-left: 20px;
+    color: #dbdbdb;
     box-sizing: border-box;
-    padding: 5px;
     box-shadow: none;
-    background-color:rgba(240, 255, 255, 0);
+    background-color:rgba(12, 12, 12, 0);
     background-image: url("../images/input-container.png");
-    height: 28px;
     background-size: contain;
     background-repeat: no-repeat;
   }
 
   .last-li {
+    position: absolute;
+    bottom: 2vh;
     box-sizing: border-box;
     display: flex;
     flex-direction: row;
+    height: calc(0.3*(180px));
+    width: calc(70% - 40px);
+    justify-content: flex-start;
+  }
+
+  .toggle-btn {
+    width: 30%;
+    padding-right: 3px;
   }
 
   span {
-  color : #4d8822
-  }
-
-  span:hover {
-    color: #6abe30;
+    font-size: 35px;
+    color: #e56050;
   }
 
   #next-btn {
-    box-sizing: border-box;
     width: 30%;
-    justify-content: right;
+    position: absolute;
+    right: 0;
+    bottom: 0px;
+    padding-bottom: 15px;
+    padding-right: 40px;
   }
 
   #next-btn:hover {
     content: url("../images/next-hover-btn.png");
-  }
-
-  p {
-    font-size: 25px;
-    width: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
   }
   

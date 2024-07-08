@@ -4,8 +4,8 @@
     
     <meta charset="utf-8" />
     
- <link href="../static/css/sign-in-style.css" rel="stylesheet" />
- <script src="../static/scripts/main.js" defer></script>
+ <link href="../static/css/authentication-style.css" rel="stylesheet" />
+ <script src="../static/scripts/authentication-handling.js" defer></script>
 
 
     <!-- Fonts stored online
@@ -21,26 +21,34 @@
     
     <meta name="viewport" content="width=device-width" />
     
-    <title>Sign in</title>
+    <title>Authentication</title>
   </head>
   <body>
 
 <!-- Sign in/login form -->
-<form class="sign-in" action="/my-handling-form-page" method="post">
+<form class="auth" action="/auth" method="post">
     <ul>
-    <li>
+    <li class="field">
+      <div>
       <label for="name">Username:</label>
+    </div>
     </li>
-    <li>
-      <input type="text" id="name" name="user_name"/>
+    <li class="field">
+    <div>
+      <input type="text" id="name" name="user_name" maxlength="20"/>
+    </div>
     </li>
-    <li>
+    <li class="field">
+      <div>
       <label for="mail">Email:</label>
+      </div>
     </li>
-    <li>
-      <input type="email" id="email" name="user_email"/>
+    <li class="field">
+      <div>
+      <input type="email" id="email" name="user_email" maxlength="40"/>
+      </div>
     </li>
-    <li>
+    <!---<li>
       <label for="password">Password:</label>
     </li>
     <li>
@@ -50,15 +58,15 @@
       <label for="password">Enter password again:</label>
     </li>
     <li>
-      <input type="password" id="password" name="user_password_again" minlength="8" maxlength="50" required/>
-    </li>
+      <input type="password" id="password-again" name="user_password_again" minlength="8" maxlength="50" required/>
+    </li> --->
+  
     <li class="last-li">
-      <p>Or
-<span>Login</span>
-    </p>
-      <img id="next-btn" src="../static/images/next-btn.png" alt=""/>
+      <img class="toggle-btn" src="../static/images/red-toggle.png" alt=""/>
+      <span>Sign up</span>
     </li>
+    <img id="next-btn" src="../static/images/next-btn.png" alt=""/>
   </ul>
-  <img id="sign-in-img" src="../static/images/sign-in.png" alt=""/>
+  <img id="auth-img-container" src="../static/images/sign-in.png" alt=""/>
   </form>  
 </body>

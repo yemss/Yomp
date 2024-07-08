@@ -1,14 +1,13 @@
-const wriesly_btn = document.querySelector("#wriesly-btn");
-const skizzy_btn = document.querySelector("#skizzy-btn");
-const daemon_btn = document.querySelector("#daemon-btn");
+const wrieslyBtn = document.querySelector("#wriesly-btn");
+const skizzyBtn = document.querySelector("#skizzy-btn");
+const daemonBtn = document.querySelector("#daemon-btn");
 
-const div_parent = document.querySelector(".character-description");
-const div_parent2 = document.querySelector(".character-img");
-//const sign_in_form = document.querySelector(".sign-in");
-//const next_btn = document.querySelector(".next");
+const parentDiv = document.querySelector(".character-description");
+const parent2Div = document.querySelector(".character-img");
 
-var p_child = document.createElement("p");
-var h3_element = document.querySelector(".character-name");
+
+var childP = document.createElement("p");
+var h3 = document.querySelector(".character-name");
 var img = document.createElement("img");
 var div = document.createElement("div");
 
@@ -16,94 +15,89 @@ function applyStyles(element, styles) {
     for (const property in styles) {
       element.style[property] = styles[property];
     }
-  }
+}
 
 function createDescriptionForCharacter(description) {
-    h3_element.innerHTML = "";
-    p_child.innerHTML = "";
-    p_child.textContent = description;
-    div_parent.appendChild(p_child);
+    h3.innerHTML = "";
+    childP.innerHTML = "";
+    childP.textContent = description;
+    parentDiv.appendChild(childP);
 }
 
 function createImageForCharacter(str) {
     img.src = str;
     img.alt = "";
-    div_parent2.appendChild(img);
+    parent2Div.appendChild(img);
     applyStyles(img, {"min-height": "100%", width: "100%"});
 }
+
 createImageForCharacter("static/images/wriesly.png");
 let description = "Wriesly is an 8-bit console who resides in the Yomp world, the world of minigames, with a duty to perserve it from the eventual ruin.";
 createDescriptionForCharacter(description);
-h3_element.textContent = "Wriesly";
+h3.textContent = "Wriesly";
 
-wriesly_btn.classList.remove("dark-img");
-wriesly_btn.classList.add("bright-img");
-skizzy_btn.classList.add("dark-img");
-daemon_btn.classList.add("dark-img");
+wrieslyBtn.classList.remove("dark-img");
+wrieslyBtn.classList.add("bright-img");
+skizzyBtn.classList.add("dark-img");
+daemonBtn.classList.add("dark-img");
 
-wriesly_btn.addEventListener("click", () => {
+wrieslyBtn.addEventListener("click", () => {
     createImageForCharacter("static/images/wriesly.png");
     let description = "Wriesly is an 8-bit console who resides in the Yomp world, the world of minigames, with a duty to perserve it from the eventual ruin.";
     createDescriptionForCharacter(description);
-    h3_element.textContent = "Wriesly";
+    h3.textContent = "Wriesly";
 
-    wriesly_btn.classList.remove("dark-img");
-    wriesly_btn.classList.add("bright-img");
-    skizzy_btn.classList.add("dark-img");
-    daemon_btn.classList.add("dark-img");
+    wrieslyBtn.classList.remove("dark-img");
+    wrieslyBtn.classList.add("bright-img");
+    skizzyBtn.classList.add("dark-img");
+    daemonBtn.classList.add("dark-img");
     });
 
-skizzy_btn.addEventListener("click", () => {
+skizzyBtn.addEventListener("click", () => {
     createImageForCharacter("static/images/skizzy.png");
     let description = "Skizzy is a little girl who loves sour candy and bunnies, venturing the vast horizons of Yomp.";
     createDescriptionForCharacter(description);
-    h3_element.textContent = "Skizzy";
+    h3.textContent = "Skizzy";
 
-    skizzy_btn.classList.remove("dark-img");
-    skizzy_btn.classList.add("bright-img");
-    wriesly_btn.classList.add("dark-img");
-    daemon_btn.classList.add("dark-img");
+    skizzyBtn.classList.remove("dark-img");
+    skizzyBtn.classList.add("bright-img");
+    wrieslyBtn.classList.add("dark-img");
+    daemonBtn.classList.add("dark-img");
 });
 
-daemon_btn.addEventListener("click", () => {
+daemonBtn.addEventListener("click", () => {
     createImageForCharacter("static/images/daemon.png");
     let description = "Daemon, the last ancestor of the demon kin, mistakenly arrived within the Yomp realm. The first impression on him seems fearesome but in truth is a considerate child.";
     createDescriptionForCharacter(description);
-    h3_element.textContent = "Daemon";
+    h3.textContent = "Daemon";
 
-    daemon_btn.classList.remove("dark-img");
-    daemon_btn.classList.add("bright-img");
-    wriesly_btn.classList.add("dark-img");
-    skizzy_btn.classList.add("dark-img");
+    daemonBtn.classList.remove("dark-img");
+    daemonBtn.classList.add("bright-img");
+    wrieslyBtn.classList.add("dark-img");
+    skizzyBtn.classList.add("dark-img");
 });
+/*wrieslyBtn.addEventListener("mouseover", () => {
 
-
-/*wriesly_btn.addEventListener("mouseover", () => {
-
-    const computedStyles = window.getComputedStyle(wriesly_btn);
+    const computedStyles = window.getComputedStyle(wrieslyBtn);
     const currentFilter = computedStyles.getPropertyValue("filter");
 
     if (currentFilter === "brightness(40%)") {
-        wriesly_btn.style.filter = "brightness(70%)";
+        wrieslyBtn.style.filter = "brightness(70%)";
     }
 });
-skizzy_btn_btn.addEventListener("mouseover", () => {
-    const computedStyles = window.getComputedStyle(skizzy_btn_btn);
+skizzyBtn.addEventListener("mouseover", () => {
+    const computedStyles = window.getComputedStyle(skizzyBtn);
     const currentFilter = computedStyles.getPropertyValue("filter");
 
     if (currentFilter === "brightness(40%)") {
-        skizzy_btn.style.filter = "brightness(70%)";
+        skizzyBtn.style.filter = "brightness(70%)";
     }
 });
-daemon_btn.addEventListener("mouseover", () => {
-    const computedStyles = window.getComputedStyle(daemon_btn);
+daemonBtn.addEventListener("mouseover", () => {
+    const computedStyles = window.getComputedStyle(daemonBtn);
     const currentFilter = computedStyles.getPropertyValue("filter");
 
     if (currentFilter === "brightness(40%)") {
-        daemon_btn.style.filter = "brightness(70%)";
+        daemonBtn.style.filter = "brightness(70%)";
     }
 }); */
-/*
-next_btn.addEventListener("click", () => {
-    
-});*/
