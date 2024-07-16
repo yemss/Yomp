@@ -1,0 +1,24 @@
+@font-face {
+  font-family: "Chakra Petch";
+  src: local("ChakraPetch-SemiBold"),
+    url("/static/fonts/chakra-petch/ChakraPetch-SemiBold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Ubuntu";
+  src: local("Ubuntu-Bold"),
+    url("/static/fonts/ubuntu/Ubuntu-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Pixel font";
+  src: local("Pixel-font"),
+    url("/static/fonts/pixel-font/Pixel-font.ttf") format("truetype");
+}
+
+
+/* Universally removing default browser margins and paddings*/
+* {
+  margin: 0;
+  padding: 0;
+}

@@ -13,7 +13,7 @@ var div = document.createElement("div");
 
 function applyStyles(element, styles) {
     for (const property in styles) {
-      element.style[property] = styles[property];
+        element.style[property] = styles[property];
     }
 }
 
@@ -28,7 +28,7 @@ function createImageForCharacter(str) {
     img.src = str;
     img.alt = "";
     parent2Div.appendChild(img);
-    applyStyles(img, {"min-height": "100%", width: "100%"});
+    applyStyles(img, { "min-height": "100%", width: "100%" });
 }
 
 createImageForCharacter("static/images/wriesly.png");
@@ -51,7 +51,7 @@ wrieslyBtn.addEventListener("click", () => {
     wrieslyBtn.classList.add("bright-img");
     skizzyBtn.classList.add("dark-img");
     daemonBtn.classList.add("dark-img");
-    });
+});
 
 skizzyBtn.addEventListener("click", () => {
     createImageForCharacter("static/images/skizzy.png");

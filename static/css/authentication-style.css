@@ -1,122 +1,113 @@
-@font-face {
-    font-family: "Chakra Petch";
-    src: local("ChakraPetch-SemiBold"),
-    url("/static/fonts/chakra-petch/ChakraPetch-SemiBold.ttf") format("truetype");
-  }
-  
-  @font-face {
-    font-family: "Ubuntu";
-    src: local("Ubuntu-Bold"),
-    url("/static/fonts/ubuntu/Ubuntu-Bold.ttf") format("truetype");
-  }
+@import url(universal-style.css);
 
-  @font-face {
-    font-family: "Pixel font";
-    src: local("Pixel-font"),
-    url("/static/fonts/pixel-font/Pixel-font.ttf") format("truetype");
-  }
-  
-  /* Universally removing default browser margins and paddings*/
-  * {
-    margin: 0;
-    padding: 0;
-  }
+:root {
+  --label-font: "Pixel font", "sans-serif";
+  --input-font: "Ubuntu", "sans-serif";
+  --font-color: #dbdbdb;
+  --red-color: #e56050;
+}
 
-  /* The whole page */
-  body {
-    overscroll-behavior: none;
-    background-color: #212227;
-    font-family: "Pixel font", "sans-serif";
-    color: #dbdbdb;
-    height: 100%;
-    letter-spacing: -5px;
-  }
+/* The whole page */
+body {
+  overscroll-behavior: none;
+  background-color: #212227;
+  font-family: var(--label-font);
+  color: var(--font-color);
+  height: 100%;
+  letter-spacing: -5px;
+}
 
-  .auth {
-    display: inline-block;
-    position: relative;
-  }
+.auth {
+  display: inline-block;
+  position: relative;
+}
 
 /* Sign in form */
-  #auth-img-container {
-    width: 50%;
-    margin-top: 2.89vh;
-    margin-left: 25vw;
-  } 
+#auth-img-container {
+  width: 50%;
+  margin-top: 2.89vh;
+  margin-left: 25vw;
+}
 
-  .auth ul {
-    font-size: 40px;
-    overflow: auto;
-    position: absolute;
-    top: 15.2%;
-    left: 30.4%;
-    list-style: none;
-    height: calc(716/75 * 55px);
-    width: calc(716/75 * 49px);
-    display: flex;
-    flex-direction: column;
-    padding-left: 35px;
-  }
+.auth ul {
+  list-style: none;
+  font-size: 40px;
+  overflow: auto;
+  box-sizing: border-box;
+  position: absolute;
+  top: 15.2%;
+  left: 30.4%;
+  height: calc(716/75 * 55px);
+  width: calc(716/75 * 49px);
+  display: flex;
+  flex-direction: column;
+  padding-left: 35px;
+  padding-right: 35px;
+}
 
-  div {
-    width: 100%;
-    height: 100%;
-  }
-  
-  .field {
-    padding-bottom: 10px;
-    padding-top: 10px;
-  }
+input {
+  appearance: none;
+  border-width: 0;
+  outline: none;
+  font-family: var(--input-font);
+  color: var(--font-color);
+  font-size: 25px;
+  width: 380px;
+  height: 60px;
+  padding-right: 20px;
+  padding-left: 20px;
+  box-sizing: border-box;
+  box-shadow: none;
+  background-color: rgba(0, 0, 0, 0);
+  background-image: url("../images/input-container.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
 
-   input {
-    border-width: 0;
-    outline: 0;
-    font-family: "Ubuntu", "sans-serif";
-    font-size: 25px;
-    width: 380px;
-    height: 60px;
-    padding-right: 20px;
-    padding-left: 20px;
-    color: #dbdbdb;
-    box-sizing: border-box;
-    box-shadow: none;
-    background-color:rgba(12, 12, 12, 0);
-    background-image: url("../images/input-container.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-  }
+input:not(:focus, :active),
+#next-btn:not(:hover) {
+  filter: brightness(80%);
+}
 
-  .last-li {
-    position: absolute;
-    bottom: 2vh;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: row;
-    height: calc(0.3*(180px));
-    width: calc(70% - 40px);
-    justify-content: flex-start;
-  }
+div {
+  width: 100%;
+  height: 100%;
+}
 
-  .toggle-btn {
-    width: 30%;
-    padding-right: 3px;
-  }
+.field {
+  padding-bottom: 10px;
+}
 
-  span {
-    font-size: 35px;
-    color: #e56050;
-  }
+.last-li {
+  position: absolute;
+  bottom: 2vh;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  height: calc(0.3*(180px));
+  width: calc(70% - 40px);
+  justify-content: flex-start;
+}
 
-  #next-btn {
-    width: 30%;
-    position: absolute;
-    right: 0;
-    bottom: 0px;
-    padding-bottom: 15px;
-    padding-right: 40px;
-  }
+.toggle-switch {
+  width: 30%;
+  padding-right: 3px;
+}
 
-  #next-btn:hover {
-    content: url("../images/next-hover-btn.png");
-  }
-  
+img+span {
+  font-size: 35px;
+  color: #e56050;
+}
+
+#next-btn {
+  width: 30%;
+  position: absolute;
+  right: 0;
+  bottom: 0px;
+  padding-bottom: 15px;
+  padding-right: 20px;
+}
+
+#next-btn:hover {
+  content: url("../images/next-hover-btn.png");
+}

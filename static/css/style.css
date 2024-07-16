@@ -1,26 +1,11 @@
-@font-face {
-  font-family: "Chakra Petch";
-  src: local("ChakraPetch-SemiBold"),
-  url("/static/fonts/chakra-petch/ChakraPetch-SemiBold.ttf") format("truetype");
-}
+@import url(universal-style.css);
 
-@font-face {
-  font-family: "Ubuntu";
-  src: local("Ubuntu"),
-  url("/static/fonts/ubuntu/Ubuntu-Regular.ttf") format("truetype");
-}
-
-/* Universally removing default browser margins and paddings*/
-* {
-  margin: 0;
-  padding: 0;
-}
 
 /* The whole page */
 body {
   overscroll-behavior: none;
   background-color: #212227;
-  font-family: "Ubuntu", "sans-serif";
+  font-family: "Chakra Petch", "Ubuntu", "sans-serif";
   color: #d6e0f8;
   font-size: 20px;
   min-height: 100%;
@@ -53,7 +38,6 @@ body {
 
 /* The title for the website */
 #title {
-  font-family: "Chakra Petch", "sans-serif";
   text-align: right;
   margin-top: calc(32px - 24px);
   margin-right: 10px;
@@ -68,6 +52,7 @@ body {
 
 /* Sub-navigation button style */
 .sub-nav button {
+  font-family: inherit;
   font-size: 16px;
   border: none;
   outline: none;
@@ -133,10 +118,11 @@ body {
 
 /* A container inside the header section */
 #welcome-text-container {
+  font-family: "Pixel font";
+  letter-spacing: -6px;
+  font-size: 3.5vw;
   position: absolute;
-  float: right;
   width: 52vw;
-  font-size: 4.5vw;
   right: 0;
   padding-bottom: 40px;
   padding-right: 40px;
@@ -156,7 +142,6 @@ body {
 }
 
 #welcome-text {
-  font-family: "Chakra Petch";
   position: absolute;
   margin-left: 10%;
   margin-right: 10%;
@@ -166,8 +151,9 @@ body {
 
 /* The header class which contains the headers of all article elements*/
 .header {
-  font-family: "Chakra Petch", "sans-serif";
-  font-size: 40px;
+  font-family: "Pixel font", "Chakra Petch", "Ubuntu", "sans-serif";
+  letter-spacing: -4px;
+  font-size: 35px;
   margin-bottom: 30px;
   display: block;
 }
@@ -191,7 +177,6 @@ article {
 
 /* The name of the character */
 .character-name {
-  font-family: "Chakra Petch", "sans-serif";
   font-size: 40px;
   margin-top: 10px;
   margin-left: 10px;
@@ -308,7 +293,7 @@ article {
 }
 
 /* Removing the marker from the lists in the footer */
-footer  div  div  ul  li {
+footer div div ul li {
   list-style-type: none;
 }
 
@@ -317,6 +302,7 @@ footer {
   background-color: #37383d;
   padding-top: 20px;
   padding-left: 20px;
+  padding-right: 20px;
   margin-left: -50px;
   margin-right: -50px;
   font-size: 15px;
@@ -335,11 +321,12 @@ footer {
 }
 
 /* Responsive spacing between subsections*/
-.footer-container > div {
+.footer-container>div {
   padding-right: calc((100% / 5) - 15%);
 }
 
-.support a:link, .support a:visited {
+.support a:link,
+.support a:visited {
   text-decoration: none;
   color: #c1d1f5;
 }
@@ -349,7 +336,7 @@ footer {
 }
 
 /* The header for each subsection */
-footer > div > div > h3 {
+footer>div>div>h3 {
   font-weight: bold;
   margin-bottom: 10px;
 }
@@ -362,7 +349,7 @@ footer > div > div > h3 {
 }
 
 /* The text inside the copyright class */
-.copyright > p {
+.copyright>p {
   margin-top: calc(15px + 2px);
-  margin-bottom: 15px;                                                                                                                       
+  margin-bottom: 15px;
 }

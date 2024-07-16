@@ -1,14 +1,15 @@
 <!doctype html>
 <html lang="en-US">
-  <head>
-    
-    <meta charset="utf-8" />
-    
- <link href="../static/css/authentication-style.css" rel="stylesheet" />
- <script src="../static/scripts/authentication-handling.js" defer></script>
+
+<head>
+
+  <meta charset="utf-8" />
+
+  <link href="../static/css/authentication-style.css" rel="stylesheet" />
+  <script src="../static/scripts/authentication-handling.js" defer></script>
 
 
-    <!-- Fonts stored online
+  <!-- Fonts stored online
       Chakra font 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,55 +19,48 @@
     
       Ubuntu font 
     <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch&family=Ubuntu:wght@300&display=swap" rel="stylesheet"> -->
-    
-    <meta name="viewport" content="width=device-width" />
-    
-    <title>Authentication</title>
-  </head>
-  <body>
 
-<!-- Sign in/login form -->
-<form class="auth" action="/auth" method="post">
+  <meta name="viewport" content="width=device-width" />
+
+  <title>Authentication</title>
+</head>
+
+<body>
+
+  <!-- Authentication form -->
+  <form class="auth" action="/auth" method="post">
     <ul>
-    <li class="field">
-      <div>
-      <label for="name">Username:</label>
-    </div>
-    </li>
-    <li class="field">
-    <div>
-      <input type="text" id="name" name="user_name" maxlength="20"/>
-    </div>
-    </li>
-    <li class="field">
-      <div>
-      <label for="mail">Email:</label>
-      </div>
-    </li>
-    <li class="field">
-      <div>
-      <input type="email" id="email" name="user_email" maxlength="40"/>
-      </div>
-    </li>
-    <!---<li>
-      <label for="password">Password:</label>
-    </li>
-    <li>
-      <input type="password" id="password" name="user_password" minlength="8" maxlength="50" required/>
-    </li>
-    <li>
-      <label for="password">Enter password again:</label>
-    </li>
-    <li>
-      <input type="password" id="password-again" name="user_password_again" minlength="8" maxlength="50" required/>
-    </li> --->
-  
-    <li class="last-li">
-      <img class="toggle-btn" src="../static/images/red-toggle.png" alt=""/>
-      <span>Sign up</span>
-    </li>
-    <img id="next-btn" src="../static/images/next-btn.png" alt=""/>
-  </ul>
-  <img id="auth-img-container" src="../static/images/sign-in.png" alt=""/>
-  </form>  
+      <li class="field">
+        <div>
+          <label for="name">Username:</label>
+        </div>
+      </li>
+      <li class="field">
+        <div>
+          <input type="text" id="name" name="user_name" maxlength="20" required />
+        </div>
+      </li>
+      <li class="field">
+        <div>
+          <label for="mail">Email:</label>
+        </div>
+      </li>
+      <li class="field">
+        <div>
+          <input type="email" id="email" name="user_email" maxlength="40" required />
+        </div>
+      </li>
+      <li class="field">
+        <div>
+          <span id="message"></span>
+        </div>
+      </li>
+      <li class="last-li">
+        <img class="toggle-switch" src="../static/images/red-toggle.png" alt="" />
+        <span id="auth-span">Sign up</span>
+      </li>
+      <img id="next-btn" src="../static/images/next-btn.png" alt="" />
+    </ul>
+    <img id="auth-img-container" src="../static/images/sign-in.png" alt="" />
+  </form>
 </body>
