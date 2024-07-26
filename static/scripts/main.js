@@ -6,10 +6,10 @@ const parentDiv = document.querySelector(".character-description");
 const parent2Div = document.querySelector(".character-img");
 
 
-var childP = document.createElement("p");
-var h3 = document.querySelector(".character-name");
-var img = document.createElement("img");
-var div = document.createElement("div");
+const childP = document.createElement("p");
+const h3 = document.querySelector(".character-name");
+const img = document.createElement("img");
+const div = document.createElement("div");
 
 function applyStyles(element, styles) {
     for (const property in styles) {

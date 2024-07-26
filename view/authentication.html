@@ -5,6 +5,7 @@
 
   <meta charset="utf-8" />
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/FitText.js/1.2.0/jquery.fittext.min.js"></script>
   <link href="../static/css/authentication-style.css" rel="stylesheet" />
   <script src="../static/scripts/authentication-handling.js" defer></script>
 
@@ -21,7 +22,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch&family=Ubuntu:wght@300&display=swap" rel="stylesheet"> -->
 
   <meta name="viewport" content="width=device-width" />
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/FitText.js/1.2.0/jquery.fittext.min.js"></script>
   <title>Authentication</title>
 </head>
 
@@ -51,15 +52,16 @@
         </div>
       </li>
       <li class="field">
-        <div>
-          <span id="message"></span>
+        <div id="error-message">
         </div>
       </li>
       <li class="last-li">
         <img class="toggle-switch" src="../static/images/red-toggle.png" alt="" />
         <span id="auth-span">Sign up</span>
       </li>
+      <!--<button id="next-btn"> -->
       <img id="next-btn" src="../static/images/next-btn.png" alt="" />
+    <!--</button> -->
     </ul>
     <img id="auth-img-container" src="../static/images/sign-in.png" alt="" />
   </form>

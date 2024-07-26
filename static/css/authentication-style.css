@@ -58,7 +58,7 @@ input {
   padding-left: 20px;
   box-sizing: border-box;
   box-shadow: none;
-  background-color: rgba(0, 0, 0, 0);
+  background-color: transparent;
   background-image: url("../images/input-container.png");
   background-size: contain;
   background-repeat: no-repeat;
@@ -94,18 +94,22 @@ div {
   padding-right: 3px;
 }
 
-img+span {
+img + span {
   font-size: 35px;
   color: #e56050;
 }
 
 #next-btn {
+  border-width: 0;
+  background-color: transparent;
   width: 30%;
+  height: 52px;
   position: absolute;
+  box-sizing: border-box;
   right: 0;
-  bottom: 0px;
-  padding-bottom: 15px;
-  padding-right: 20px;
+  bottom: 0;
+  margin-bottom: 15px;
+  margin-right: 20px;
 }
 
 #next-btn:hover {
