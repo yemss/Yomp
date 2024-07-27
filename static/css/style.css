@@ -119,7 +119,7 @@ body {
 /* A container inside the header section */
 #welcome-text-container {
   font-family: "Pixel font";
-  letter-spacing: -6px;
+  letter-spacing: -3px;
   font-size: 3.5vw;
   position: absolute;
   width: 52vw;
@@ -152,7 +152,6 @@ body {
 /* The header class which contains the headers of all article elements*/
 .header {
   font-family: "Pixel font", "Chakra Petch", "Ubuntu", "sans-serif";
-  letter-spacing: -4px;
   font-size: 35px;
   margin-bottom: 30px;
   display: block;
@@ -255,11 +254,21 @@ article {
   max-width: 70%;
 }
 
+#coming-soon-container {
+  flex: 1;
+  float: left;
+  background-color: rgb(37 43 63);
+  margin-right: 20px;
+  height: 30%;
+  max-width: 30%;
+}
+
 #note-header {
   display: flex;
   font-size: 20px;
-  padding: 10px 10px 10px 10px;
-  padding-left: 5px;
+  background-color: #1f222f;
+  border: 7px solid #0f121a;
+  padding: 10px 10px 10px 20px;
 }
 
 #exclamation-icon {
@@ -268,22 +277,10 @@ article {
   align-self: center;
 }
 
-#border {
-  border-top: 2px solid #677297;
-}
-
-#coming-soon-container {
-  flex: 1;
-  float: left;
-  background-color: rgba(48, 56, 82, 0.534);
-  border: 10px solid #2c334b;
-  margin-right: 20px;
-  height: 30%;
-  max-width: 30%;
-}
-
 #coming-soon-container p {
   padding: 20px 20px 20px 20px;
+  border: 7px solid #171923;
+  border-top: 0;
 }
 
 @media (max-width: 806px) {

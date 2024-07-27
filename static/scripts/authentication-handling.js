@@ -6,17 +6,18 @@ const authSpan = document.querySelector("#auth-span");
 const inputUsername = document.querySelector("#name");
 const inputEmail = document.querySelector("#email");
 const divErrorMessage = document.querySelector("#error-message");
+
 const labelPassword = document.createElement("label");
 const labelPassword2 = document.createElement("label");
-
 const inputPassword = document.createElement("input");
 const inputPassword2 = document.createElement("input");
-
 const labelCode = document.createElement("label");
 const inputCode = document.createElement("input");
+const metaRedirect = document.createElement("meta");
 
-var spanErrorMessage = document.createElement("span");
+const spanErrorMessage = document.createElement("span");
 const emailValidation = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
 toggleSwitch.id = "red-toggle-btn";
 
 labelPassword.setAttribute("for", "password");
@@ -45,8 +46,8 @@ inputPassword2.name = "user_password_again";
 inputPassword2.minLength = "8";
 inputPassword2.maxLength = "20";
 inputPassword2.required = true;
-
-
+metaRedirect.httpEquiv = "refresh";
+metaRedirect.content = "2; http://localhost:8080/";
 
 function applyStyles(element, styles) {
   for (const property in styles) {
@@ -54,16 +55,18 @@ function applyStyles(element, styles) {
   }
 }
 
-function validateAuth(func, event) {
+function validateAuth(...funcs) {
   try {
-    func();
-    applyStyles(spanErrorMessage, { visibility: "hidden" });
+    funcs.forEach(func => {
+      func();
+    })
+    applyStyles(spanErrorMessage, { display: "none" });
   } catch (error) {
     spanErrorMessage.textContent = error.message;
-    applyStyles(spanErrorMessage, { visibility: "visible" });
-    event.preventDefault();
-    event.stopPropagation();
+    applyStyles(spanErrorMessage, { display: "block" });
+    return false;
   }
+  return true;
 }
 
 function nameAndEmailValidation() {
@@ -76,63 +79,58 @@ function nameAndEmailValidation() {
       throw new Error("Error: Email field required");
     }
   }
-
 }
 function emailInputValidation() {
-    if (!emailValidation.test(String(inputEmail.value).toLowerCase())) {
-      throw new Error("Error: Incorrect email format");
-    }
-}
-
-function firstPageValidation() {
-    nameAndEmailValidation();
-    emailInputValidation();
+  if (!emailValidation.test(String(inputEmail.value).toLowerCase())) {
+    throw new Error("Error: Incorrect email format");
+  }
 }
 
 function passwordInputValidation() {
-  if (inputPassword.value.length < 8) {
+  if (inputPassword.value.length < 8 && inputPassword.value !== "") {
     throw new Error("Error: Password needs at least 8 characters");
   }
 }
 
 function passwordValidation() {
-  if (inputPassword.value == "" && inputPassword2.value == "") {
+  if (authSpan.textContent === "Sign up") {
+  if (inputPassword.value === "" && inputPassword2.value === "") {
     throw new Error("Error: Incomplete format");
   } else if (inputPassword.value !== inputPassword2.value) {
     throw new Error("Error: Passwords do not match");
-  } else if (inputPassword.value == "") {
+  } else if (inputPassword.value === "") {
     throw new Error("Error: Password field required");
-  } else if (inputPassword2.value == "") {
+  } else if (inputPassword2.value === "") {
     throw new Error("Error: Please re-enter password");
   }
+} else {
+  if (inputPassword.value === "") {
+    throw new Error("Error: Password field required");
+  }
 }
-
-function secondPageValidation() {
-  passwordValidation();
-  passwordInputValidation();
 }
 
 function codeVertification() {
   let vertificationCode = "abc";
-   if (inputCode.value == "") {
+  if (inputCode.value == "") {
     throw new Error("Error: Please enter the vertification code");
   }
-   if (inputCode.value != vertificationCode) {
+  if (inputCode.value != vertificationCode) {
     throw new Error("Error: Incorrect vertification code");
   }
 }
 
-applyStyles(spanErrorMessage, { color: "#e56050", "font-size": "25px", display: "block", "padding-top": "10px" });
+applyStyles(spanErrorMessage, { color: "#e56050", "font-size": "25px", "padding-top": "10px" });
 divErrorMessage.appendChild(spanErrorMessage);
 
 inputEmail.addEventListener("input", (event) => {
   event.target.setCustomValidity("");
-  validateAuth(emailInputValidation, event);
+  validateAuth(emailInputValidation);
 });
 
 inputPassword.addEventListener("input", (event) => {
   event.target.setCustomValidity("");
-  validateAuth(passwordInputValidation, event);
+  validateAuth(passwordInputValidation);
 });
 /*
 inputEmail.addEventListener("blur", () => {
@@ -168,16 +166,96 @@ toggleSwitch.addEventListener("click", () => {
   }
 });
 
+let currentPage = 1;
+nextBtn.addEventListener("click", () => {
+  let containerLiList = [];
+  let divList = [];
+  for (let i = 0; i < 5; i++) {
+    containerLiList[i] = document.createElement("li");
+    divList[i] = document.createElement("div");
+    containerLiList[i].classList.add("field");
+  }
+  switch (currentPage) {
+    case 1:
+      if (!validateAuth(nameAndEmailValidation, emailInputValidation)) {
+        return; // Stop execution if validation fails
+      }
+      // First UI change
+      parentUl.replaceChildren();
+
+      divList[0].appendChild(labelPassword);
+      divList[1].appendChild(inputPassword);
+      if (authSpan.innerText === "Sign up") {
+        divList[2].appendChild(labelPassword2);
+        divList[3].appendChild(inputPassword2);
+      }
+      divList[4].appendChild(spanErrorMessage);
+
+      for (let i = 0; i < containerLiList.length; i++) {
+        containerLiList[i].appendChild(divList[i]);
+        parentUl.appendChild(containerLiList[i]);
+      }
+      parentUl.appendChild(nextBtn);
+      currentPage++;
+      break;
+
+    case 2:
+      if (!validateAuth(passwordValidation, passwordInputValidation)) {
+        return; // Stop execution if validation fails
+      }
+      // Second UI change
+      parentUl.replaceChildren();
+
+      divList[0].appendChild(labelCode);
+      divList[1].appendChild(inputCode);
+      divList[2].appendChild(spanErrorMessage);
+
+      applyStyles(divList[0], { "padding-top": "20%" });
+      applyStyles(labelCode, { "display": "block" });
+
+      for (let i = 0; i < 4; i++) {
+        containerLiList[i].appendChild(divList[i]);
+        parentUl.appendChild(containerLiList[i]);
+      }
+      parentUl.appendChild(nextBtn);
+      currentPage++;
+      break;
+
+    case 3:
+      if (!validateAuth(codeVertification)) {
+        return; // Stop execution if validation fails
+      }
+      // Final UI change
+      parentUl.replaceChildren();
+      let head = document.getElementsByTagName("head")[0];
+      let redirectMessage = document.createElement("p");
+      let loadingDots = document.createElement("div");
+      loadingDots.classList.add("loading-dots");
+      redirectMessage.textContent = "Redirecting";
+
+      applyStyles(redirectMessage, {"font-size": "35px", "padding-top": "calc((525px - 47px - 67px)/2)", "text-align": "center"});
+      applyStyles(loadingDots, {"font-size": "50px", "padding-left": "calc((432px - 60px)/2)", "box-sizing": "border-box"});
+
+
+      parentUl.appendChild(redirectMessage);
+      parentUl.appendChild(loadingDots);
+
+      head.appendChild(metaRedirect);
+      break;
+
+    default:
+      break;
+  }
+});
+
+/* Old code
+
 nextBtn.addEventListener("click", (event) => {
-  /* Fix error overriding or error not showing */
-  // validateAuth(emailInputValidation, event);
-  //validateAuth(nameAndEmailValidation, event);
+
   validateAuth(firstPageValidation, event);
   if (inputUsername.value != "" && inputEmail.value != "" && spanErrorMessage.style.visibility === "hidden") {
     parentUl.replaceChildren();
 
-    //let containerLi, containerLi2, containerLi3, containerLi4, containerLi5 = document.createElement("li");
-    //let div, div2, div3, div4, div5 = document.createElement("div");
     let containerLi = document.createElement("li");
     let containerLi2 = document.createElement("li");
     let containerLi3 = document.createElement("li");
@@ -208,17 +286,12 @@ nextBtn.addEventListener("click", (event) => {
     }
     parentUl.appendChild(nextBtn);
 
-    //validateAuth(passwordInputValidation, event);
-    //validateAuth(passwordValidation, event);
     validateAuth(secondPageValidation, event);
 
     if (authSpan.innerText === "Sign up" && inputPassword.value != "" && inputPassword2.value != "" && spanErrorMessage.style.visibility === "hidden") {
 
       parentUl.replaceChildren();
 
-      //let containerLi, containerLi2, containerLi3 = document.createElement("li");
-
-      //let div, div2, div3 = document.createElement("div");
       let containerLi = document.createElement("li");
       let containerLi2 = document.createElement("li");
       let containerLi3 = document.createElement("li");
@@ -246,9 +319,9 @@ nextBtn.addEventListener("click", (event) => {
       parentUl.appendChild(containerLi3);
       parentUl.appendChild(nextBtn);
 
-        validateAuth(codeVertification, event);
+      validateAuth(codeVertification, event);
     }
   }
-});
+});*/
 
 

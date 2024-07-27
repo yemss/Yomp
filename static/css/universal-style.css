@@ -16,7 +16,6 @@
     url("/static/fonts/pixel-font/Pixel-font.ttf") format("truetype");
 }
 
-
 /* Universally removing default browser margins and paddings*/
 * {
   margin: 0;

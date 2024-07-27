@@ -76,7 +76,8 @@ daemonBtn.addEventListener("click", () => {
     wrieslyBtn.classList.add("dark-img");
     skizzyBtn.classList.add("dark-img");
 });
-/*wrieslyBtn.addEventListener("mouseover", () => {
+/* Old code
+wrieslyBtn.addEventListener("mouseover", () => {
 
     const computedStyles = window.getComputedStyle(wrieslyBtn);
     const currentFilter = computedStyles.getPropertyValue("filter");
