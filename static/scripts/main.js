@@ -4,7 +4,7 @@ const daemonBtn = document.querySelector("#daemon-btn");
 
 const parentDiv = document.querySelector(".character-description");
 const parent2Div = document.querySelector(".character-img");
-
+const body = document.querySelector("body");
 
 const childP = document.createElement("p");
 const h3 = document.querySelector(".character-name");
@@ -76,7 +76,7 @@ daemonBtn.addEventListener("click", () => {
     wrieslyBtn.classList.add("dark-img");
     skizzyBtn.classList.add("dark-img");
 });
-/* Old code
+  /* Old code
 wrieslyBtn.addEventListener("mouseover", () => {
 
     const computedStyles = window.getComputedStyle(wrieslyBtn);

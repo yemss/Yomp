@@ -12,6 +12,7 @@ body {
   overscroll-behavior: none;
   background-color: #212227;
   font-family: var(--label-font);
+  font-weight: lighter;
   color: var(--font-color);
   height: 100%;
   letter-spacing: -3px;
@@ -30,7 +31,6 @@ body {
 }
 
 .auth ul {
-  list-style: none;
   font-size: 40px;
   overflow: auto;
   box-sizing: border-box;
