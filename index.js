@@ -10,10 +10,15 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '/view/index.html'))
 
 })
-
 app.get('/auth', (req, res) => {
 
   res.sendFile(path.join(__dirname, '/view/authentication.html'))
+
+})
+
+app.get('/maintenance', (req, res) => {
+
+  res.sendFile(path.join(__dirname, '/view/maintenance.html'))
 
 })
 

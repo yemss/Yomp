@@ -1,0 +1,26 @@
+@import url(universal-style.css);
+
+  body {
+    font-family: "Chakra Petch", "Ubuntu-body", "sans-serif";
+    color: #d6e0f8;
+    overscroll-behavior: none;
+    background-color: #161823;
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+
+  .maintenance img {
+    display: block;
+    margin: auto;
+    margin-bottom: 50px;
+  }
+
+  .maintenance p a {
+    color: #5b8bffc5;
+  }
+  .maintenance p a:hover {
+    color: #7e7adec5
+  }

@@ -2,8 +2,8 @@
 
 /* Constants for the home page styling */
 :root {
-  --header-font-family: "Pixel font", "Chakra Petch", "Ubuntu", "sans-serif";
-  --body-font-family: "Chakra Petch", "Ubuntu", "sans-serif";
+  --header-font-family: "Pixel font", "Chakra Petch", "Ubuntu-header", "sans-serif";
+  --body-font-family: "Chakra Petch", "Ubuntu-body", "sans-serif";
   --font-color: #d6e0f8;
 }
 
@@ -12,7 +12,8 @@
   --nav-font-size: 18px;
   --nav-font-color: #c1d1f5;
   --nav-font-color-hovered: #212227;
-  --nav-background-color: #37383d;
+  --nav-background-color: #282a36;
+  /*37383d*/
   --nav-background-color-hovered: #7498e8;
   --cancel-body-margins: 0 -3.5vw 0 -3.5vw;
 }
@@ -22,7 +23,8 @@ body {
   font-family: var(--body-font-family);
   color: var(--font-color);
   overscroll-behavior: none;
-  background-color: #212227;
+  background-color: #161823;
+  /*212227*/
   font-size: 20px;
   min-height: 100%;
   position: relative;
@@ -37,7 +39,7 @@ body {
   left: 0;
   right: 0;
   margin: var(--cancel-body-margins);
-  padding-left: 10px;
+  padding-left: calc(1.8vw - 16px);
   z-index: 2;
 }
 
@@ -117,58 +119,53 @@ body {
   color: var(--nav-background-color-hovered);
 }
 
-.welcome-page-container {
-  margin: var(--cancel-body-margins);
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  padding-top: 46px;
-  position: relative;
-  z-index: 1;
+#yomp-img {
+  width: 150px;
+  z-index: 2;
+  position: absolute;
+  left: 1.8vw;
+  top: 85%;
 }
 
-#wriesly-img {
-  width: 100%;
+/* The home page's header with Wriesly */
+.welcome-page-container {
+  margin: var(--cancel-body-margins);
+  background-image: url(../images/header-pic.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: calc((100vw / 1962) * 1116);
+  position: relative;
+  top: 46px;
+  z-index: 1;
 }
 
 /* A container inside the header section */
 #welcome-text-container {
+  background-image: url("../images/welcome-text-container.png");
+  background-repeat: no-repeat;
+  background-size: contain;
   font-family: var(--header-font-family);
-  font-size: 3.5vw;
-  letter-spacing: -1px;
   position: absolute;
-  width: 52vw;
-  right: 0;
-  padding-bottom: 40px;
-  padding-right: 40px;
+  top: 90%;
+  right: 3.5vw;
+  transform: translate(0, -90%);
+  width: 42vw;
+  height: calc((42vw / 913) * 429);
 }
 
-#welcome-text-container div {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  float: right;
-}
-
-#welcome-text-container img {
-  float: right;
-  width: 100%;
-  height: 100%;
-}
-
+/* The heading of the page */
 #welcome-text {
-  position: absolute;
-  margin-left: 10%;
-  margin-right: 10%;
-  margin-top: 5%;
-  margin-bottom: 5%;
+  text-align: left;
+  font-size: 4vw;
+  padding: 5%;
 }
 
 /* The header class which contains the headers of all article elements*/
 .header {
   font-weight: lighter;
   font-family: var(--header-font-family);
-  font-size: 35px;
+  font-size: 3vw;
+  padding-top: 40px;
   margin-bottom: 30px;
   display: block;
 }
@@ -279,7 +276,7 @@ article {
 #coming-soon-container {
   flex: 1;
   float: left;
-  background-color: rgb(27 32 47);
+  background-color: rgb(30 36 52);
   margin-right: 20px;
   height: 30%;
   max-width: 25%;
@@ -288,7 +285,7 @@ article {
 
 #note-header {
   display: flex;
-  border: 7px solid #0f121a;
+  border: 7px solid #0e0f17;
   background-image: url(../images/note-header.png);
   background-repeat: no-repeat;
   background-size: cover;
@@ -310,10 +307,9 @@ div {
 
 #coming-soon-container p {
   padding: 1.07vw;
-  border: 7px solid #171923;
+  border: 7px solid #0e0f17;
   border-top: 0;
 }
-/*
 
 @media (max-width: 1150px) {
   :root {
@@ -325,14 +321,18 @@ div {
   #console {
     max-width: 70%;
   }
+  #yomp-img {
+    top: 83%;
+    width: 125px;
+  }
 }
 
 @media (max-width: 995px) {
   :root {
     --nav-font-size: 2vw;
   }
-  #welcome-text-container {
-    letter-spacing: 0;
+  #welcome-text {
+    font-size: 2.7vw;
   }
   #coming-soon-container{
     font-size: 2vw;
@@ -347,10 +347,17 @@ div {
   .copyright>p{
     font-size: 1.5vw;
   }
+  #yomp-img {
+    top: 80%;
+    width: 110px;
+  }
 }
 @media (max-width: 610px) {
   :root {
     --nav-font-size: 3vw;
+  }
+  #welcome-text {
+    font-size: 2.5vw;
   }
   .header {
     font-size: 20px;
@@ -358,9 +365,16 @@ div {
   .character-name {
     font-size: 30px;
   }
+  #yomp-img {
+    top: 80%;
+    width: 100px;
+  }
 }
 
 @media (max-width: 585px) {
+  #welcome-text {
+    font-size: 2.4vw;
+  }
   .character-description {
     font-size: 2.7vw;
   }
@@ -372,10 +386,17 @@ div {
   } 
   .copyright>p{
     font-size: 2.7vw;
+  }
+  #yomp-img {
+    top: 78%;
+    width: 90px;
   }
 }
 
 @media (max-width: 520px) {
+  #welcome-text {
+    font-size: 2.3vw;
+  }
   .character-description {
     font-size: 2.5vw;
   }
@@ -387,6 +408,10 @@ div {
   } 
   .copyright>p{
     font-size: 2.5vw;
+  }
+  #yomp-img {
+    top: 76%;
+    width: 70px;
   }
 }
 
@@ -406,8 +431,12 @@ div {
   .copyright>p{
     font-size: 2.8vw;
   }
+  #yomp-img {
+    top: 78%;
+    width: 70px;
+  }
 }
-*/
+
 
 /* The footer section of the page with its child elements aligned in a column */
 footer {
@@ -419,6 +448,8 @@ footer {
   font-size: 1.2vw;
   display: flex;
   flex-direction: column;
+  color: #abb5c4;
+
 }
 
 /* A container for all the div elements within the footer aligned in a row */
@@ -427,25 +458,18 @@ footer {
   flex: 1;
   flex-direction: row;
   text-align: left;
-  padding-bottom: 2.7vh;
+  padding-bottom: 5vh;
   width: 100%;
 }
 
 /* Responsive spacing between subsections*/
 .footer-container>div {
-  text-decoration: none;
-
   padding-right: calc((100% / 5) - 15%);
 }
 
-.support a:link,
-.support a:visited {
-  text-decoration: none;
-  color: var(--nav-font-color);
-}
-
-.support a:hover {
-  text-decoration: underline;
+.footer-container a:link,
+.footer-container a:visited {
+  color: #8e9aab
 }
 
 /* The header for each subsection */
@@ -456,7 +480,7 @@ footer>div>div>h3 {
 
 /* Copyright seperated by a border-top property from the footer */
 .copyright {
-  border-top: 2px solid #646468;
+  border-top: 2px solid #555e6b;
   box-sizing: border-box;
   text-align: left;
   font-size: 1vw;

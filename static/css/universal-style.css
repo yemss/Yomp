@@ -1,13 +1,19 @@
 @font-face {
-  font-family: "Chakra Petch";
-  src: local("ChakraPetch-SemiBold"),
-    url("/static/fonts/chakra-petch/ChakraPetch-SemiBold.ttf") format("truetype");
+  font-family: "Ubuntu-header";
+  src: local("Ubuntu-Bold"),
+    url("/static/fonts/ubuntu/Ubuntu-Bold.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: "Ubuntu";
-  src: local("Ubuntu-Bold"),
-    url("/static/fonts/ubuntu/Ubuntu-Bold.ttf") format("truetype");
+  font-family: "Ubuntu-body";
+  src: local("Ubuntu-Regular"),
+    url("/static/fonts/ubuntu/Ubuntu-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Chakra Petch";
+  src: local("ChakraPetch-SemiBold"),
+    url("/static/fonts/chakra-petch/ChakraPetch-SemiBold.ttf") format("truetype");
 }
 
 @font-face {
@@ -16,9 +22,26 @@
     url("/static/fonts/pixel-font/Pixel-font.ttf") format("truetype");
 }
 
+html {
+  height: 100%;
+}
+
+/* It takes space at the topmost part of the page, so it should be removed*/
+title {
+  display: none;
+}
+
 /* Universally removing default browser margins and paddings*/
 * {
   margin: 0;
   padding: 0;
+  display: block;
   list-style-type: none;
+}
+  a:link, a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
 }

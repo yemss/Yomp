@@ -120,7 +120,7 @@ function codeVertification() {
   }
 }
 
-applyStyles(spanErrorMessage, { color: "#e56050", "font-size": "25px", "padding-top": "10px" });
+applyStyles(spanErrorMessage, { color: "#e56050", "font-size": "2.5vw", "padding-top": "10px" });
 divErrorMessage.appendChild(spanErrorMessage);
 
 inputEmail.addEventListener("input", (event) => {

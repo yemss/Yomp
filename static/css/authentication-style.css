@@ -2,7 +2,7 @@
 
 :root {
   --label-font: "Pixel font", "sans-serif";
-  --input-font: "Ubuntu", "sans-serif";
+  --input-font: "Ubuntu-header", "sans-serif";
   --font-color: #dbdbdb;
   --red-color: #e56050;
 }
@@ -10,12 +10,11 @@
 /* The whole page */
 body {
   overscroll-behavior: none;
-  background-color: #212227;
+  background-color: #161823;
   font-family: var(--label-font);
   font-weight: lighter;
   color: var(--font-color);
   height: 100%;
-  letter-spacing: -3px;
 }
 
 .auth {
@@ -31,7 +30,7 @@ body {
 }
 
 .auth ul {
-  font-size: 40px;
+  font-size: 3.6vw;
   overflow: auto;
   box-sizing: border-box;
   position: absolute;
@@ -73,6 +72,10 @@ div {
   height: 100%;
 }
 
+ul:first-child {
+  padding-top: 25px;
+}
+
 .field {
   padding-bottom: 10px;
 }
@@ -94,7 +97,8 @@ div {
 }
 
 img + span {
-  font-size: 35px;
+  font-size: 3vw;
+  align-content: center;
   color: #e56050;
 }
 
